@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: si7dyaayr-python-gitops
+  description: This is GitOps manifest for si7dyaayr-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=si7dyaayr-python
+    backstage.io/kubernetes-id: si7dyaayr-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: si7dyaayr-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:si7dyaayr-python
